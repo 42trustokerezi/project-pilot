@@ -1,5 +1,6 @@
 import React from "react";
 import { GoDotFill } from "react-icons/go";
+import TaskCard from "./TaskCard";
 
 const TaskSection = () => {
   return (
@@ -7,76 +8,31 @@ const TaskSection = () => {
       {/* Todo */}
       <div className="col-span-1 mt-5">
         <span className="flex items-center mb-2">
-          <GoDotFill />
+          <GoDotFill color="#fb8500" />
           <h1>Todo</h1>
         </span>
         <ul>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
+          <TaskCard/>
         </ul>
       </div>
       {/* Doing */}
       <div className="col-span-1 mt-5">
         <span className="flex items-center mb-2">
-          <GoDotFill />
+          <GoDotFill color="#ffd60a" />
           <h1>Doing</h1>
         </span>
         <ul>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
+          <TaskCard/>
         </ul>
       </div>
       {/* Done */}
       <div className="col-span-1 mt-5">
         <span className="flex items-center mb-2">
-          <GoDotFill />
+          <GoDotFill color="#80ed99" />
           <h1>Done</h1>
         </span>
         <ul>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
-          <li className="w-full px-3 py-5 bg-white rounded-lg mb-5">
-            <h1 className="text-lg">Build UI for onboarding flow</h1>
-            <h2 className="text-xs">0 of 3 subtasks</h2>
-          </li>
+          <TaskCard/>
         </ul>
       </div>
     </section>
