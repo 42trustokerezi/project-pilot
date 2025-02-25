@@ -4,6 +4,6 @@ const BoardSchema = new Schema({
     name: {type: String, required: true}
 })
 
-const Board = models.Board || models("Board", BoardSchema);
+const Board = models.Board || model("Board", BoardSchema);
 
 export default Board;
