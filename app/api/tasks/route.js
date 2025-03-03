@@ -8,14 +8,12 @@ export async function POST(request) {
 
     await dbConnect();
 
+    if(!board){
+        return NextResponse.json({message: "specify the board you want the task to be associated with"})
+    }
+
     await Task.create({ title, description, subTask, board });
 
-    // const newTask = new Task({
-    //     title,
-    //     description,
-    //     board: boardId,
-    //     subTask,
-    // })
 
     return NextResponse.json(
       { message: "task created successfully" },

@@ -1,14 +1,20 @@
 import { Schema, Types, model, models } from "mongoose";
 
+ export const TaskStatus = {
+    TODO: "TODO",
+    DOING: "DOING",
+    DONE: "DONE",
+}
+
 const TaskSchema = new Schema({
   title: { type: String, required: true },
   description: { type: String, required: true },
   subTask: [{ type: String }],
   board: { type: Schema.Types.ObjectId, ref: "Board" },
-  state: {
+  status: {
     type: String,
-    enum: ["TODO", "DOING", "DONE"],
-    default: "TODO",
+    enum: Object.values(TaskStatus),
+    default: TaskStatus.TODO,
   },
 });
 
