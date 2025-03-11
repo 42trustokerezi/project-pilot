@@ -11,7 +11,7 @@ export async function GET(request, { params }) {
     if (!task) {
       return NextResponse.json({ message: "Task not found" }, { status: 404 });
     }
-    return NextResponse.json({ task }, { status: 200 });
+    return NextResponse.json( task , { status: 200 });
   } catch (error) {
     return NextResponse.json({ error: error.message });
   }

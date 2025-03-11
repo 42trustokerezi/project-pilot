@@ -18,7 +18,7 @@ export async function GET(request) {
     try{
         await dbConnect();
         const board = await Board.find();
-        return NextResponse.json({board},{status:200});
+        return NextResponse.json(board,{status:200});
     }catch (error) {
         return NextResponse.json({message: 'no board found'}, {status:500})
     }

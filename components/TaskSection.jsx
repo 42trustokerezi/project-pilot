@@ -2,7 +2,7 @@ import React from "react";
 import { GoDotFill } from "react-icons/go";
 import TaskCard from "./TaskCard";
 
-const TaskSection = () => {
+const TaskSection = ({ tasks }) => {
   return (
     <section className="w-full h-full bg-[#E9EFFB] grid grid-cols-3 gap-4 px-10">
       {/* Todo */}
@@ -12,7 +12,10 @@ const TaskSection = () => {
           <h1>Todo</h1>
         </span>
         <ul>
-          <TaskCard/>
+          {tasks.filter(task => task.status === "TODO").map((task) => (
+              
+              <TaskCard id={task._id} title={task.title}/>
+            ))}
         </ul>
       </div>
       {/* Doing */}
@@ -22,7 +25,10 @@ const TaskSection = () => {
           <h1>Doing</h1>
         </span>
         <ul>
-          <TaskCard/>
+        {tasks.filter(task => task.status === "DOING").map((task) => (
+              
+              <TaskCard id={task._id} title={task.title}/>
+            ))}
         </ul>
       </div>
       {/* Done */}
@@ -32,7 +38,10 @@ const TaskSection = () => {
           <h1>Done</h1>
         </span>
         <ul>
-          <TaskCard/>
+        {tasks.filter(task => task.status === "DONE").map((task) => (
+              
+              <TaskCard id={task._id} title={task.title}/>
+            ))}
         </ul>
       </div>
     </section>

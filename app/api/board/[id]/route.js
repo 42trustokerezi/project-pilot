@@ -8,7 +8,7 @@ export async function GET(request, { params }) {
     const { id } = await params;
     await dbConnect();
     const board = await Board.findOne({ _id: id });
-    return NextResponse.json({ board }, { status: 200 });
+    return NextResponse.json( board , { status: 200 });
   } catch (error) {
     return NextResponse.json({ message: "Board not found" }, { status: 500 });
   }

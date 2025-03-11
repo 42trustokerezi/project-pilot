@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import dbConnect from "@/lib/db";
 import Task from "@/models/Task";
+import Board from "@/models/Board";
 
 export async function POST(request) {
   try {
@@ -12,7 +13,13 @@ export async function POST(request) {
         return NextResponse.json({message: "specify the board you want the task to be associated with"})
     }
 
-    await Task.create({ title, description, subTask, board });
+    const boardId = await Board.findById(board)
+
+    if(!boardId){
+        return NextResponse.json({message: "Board not found"})
+    }
+
+    await Task.create({title, description, subTask, board});
 
 
     return NextResponse.json(
@@ -31,7 +38,7 @@ export async function GET(request) {
   try {
     await dbConnect();
     const tasks = await Task.find().populate("board");
-    return NextResponse.json({ tasks }, { status: 200 });
+    return NextResponse.json( tasks , { status: 200 });
   } catch (error) {
     return NextResponse.json({
       message: "task not found",
